@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Show from './components/Show';
 import Search from './components/Search';
+import 'bootstrap/dist/css/bootstrap.css';
+
+document.body.style = 'background: ;';
 
 //console.log(process.env.REACT_APP_API_KEY)
 
@@ -42,15 +45,20 @@ const countriestoshow = newSearch === ''
     : countries.filter(country => country.name.common.toLowerCase().includes(newSearch.toLowerCase()));
 
     return (
-    <div>
+    <div className="panel panel-primary" style = {{height:"150vh"}}>
+      <div className="panel-body">
       <Search 
         newSearch={newSearch} 
         handleInputChange={handleInputChange}
       />
+    </div>
+      <div className="panel-footer">
       <Show
         countriestoshow={countriestoshow} 
         newSearch={newSearch} 
-        handleInputChange={handleInputChange} />
+        handleInputChange={handleInputChange} 
+      />
+      </div>
     </div>
   );
 };

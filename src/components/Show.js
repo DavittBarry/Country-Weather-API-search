@@ -1,6 +1,7 @@
 import React from 'react';
 import CountriesView from './CountriesView';
 import Country from './Country';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Show = ({ countriestoshow, newSearch, handleInputChange }) => {
 
@@ -8,8 +9,8 @@ const Show = ({ countriestoshow, newSearch, handleInputChange }) => {
 
   // Jos käyttäjä ei ole laittanut mitään hakukennälle, tulee ilmoitus siitä. Sitten jos on liikaa (yli 10) ilmestyy toinen. 
 
-    if (newSearch.length === 0) return (<p>Please use search function to begin.</p>)
-    else if (countriestoshow.length > 10) return (<p>Too many results, please specify.</p>)
+    if (newSearch.length === 0) return (<p className="text-center">Please use search function to begin.</p>)
+    else if (countriestoshow.length > 10) return (<p className="text-center">Too many results, please specify.</p>)
     else if (countriestoshow.length !== 1) return (<CountriesView  
                                                         countriestoshow={countriestoshow} 
                                                         handleInputChange={handleInputChange} 
