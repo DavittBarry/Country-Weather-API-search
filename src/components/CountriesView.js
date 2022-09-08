@@ -7,17 +7,17 @@ const CountriesView = ({ countriestoshow, handleInputChange }) => {
         <thead className="row border ">
             {countriestoshow.map(country => 
                 <tr key={country.name.common} 
-                    className="col-xs-4 col-sm-4 col-md-4 col-lg-4 border p-3"
+                    className="col-xs-4 col-sm-4 col-md-4 col-lg-4 border p-3 "
                 >
-                    <>{country.name.common}</>
-                    <tr className="row mx-auto my-auto">
+                    <th className="text-center ">{country.name.common}</th>
+                    <td className="row mx-auto my-auto">
                         <button
                         className="btn btn-primary btn-xs btn-block"
                         value={country.name.common}
                         onClick={handleInputChange}>
                         Show
                         </button>
-                    </tr>
+                    </td>
                 </tr>)}
         </thead>
     </table>
